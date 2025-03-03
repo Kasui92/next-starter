@@ -42,7 +42,7 @@ setup_install_path() {
   fi
 
   # Navigate to the installation path
-  cd "$INSTALL_PATH" || exit 1
+  cd "$INSTALL_PATH"; echo || exit 1
 }
 
 # Start the script

@@ -9,8 +9,12 @@ get_project_configuration() {
     exit 1
   fi
 
+  echo
+
   # Get project description
   prompt_user "📄 Enter a short project description (optional):" "project_description" "A modern Next.js application"
+
+  echo
 
   # Select package manager
   prompt_select "📦 Select a package manager:" "package_manager_name" "npm" "yarn" "pnpm"
@@ -80,7 +84,7 @@ create_project() {
 finalize_project() {
   echo -e "\n${GREEN}✅ Project initialization complete!${NC}"
   echo -e "${YELLOW}💻 To start developing:${NC}"
-  echo -e "${CYAN}cd $project_name${NC}"
+  echo -e "${CYAN}cd $INSTALL_PATH${NC}"
   echo -e "${CYAN}${package_manager_name} run dev${NC}"
 
   echo -e "\n${BLUE}🎉 Happy coding! 🎉${NC}"

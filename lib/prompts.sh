@@ -9,18 +9,18 @@ prompt_user() {
   echo -e "${YELLOW}${prompt}${NC}"
   if [ -n "$default_value" ]; then
     echo -e "${DIM}Default: $default_value${NC}"
+    echo -e "${PURPLE}> ${NC}\c"
     read -r input
     if [ -z "$input" ]; then
       input="$default_value"
     fi
   else
+    echo -e "${PURPLE}> ${NC}\c"
     read -r input
   fi
 
   # Export the variable to the parent shell
   eval "$variable_name=\"$input\""
-
-  echo ""
 }
 
 # Get user selection from options
@@ -35,6 +35,7 @@ prompt_select() {
     echo "$((i+1))) ${options[$i]}"
   done
 
+  echo -e "${PURPLE}> ${NC}\c"
   read -r selection
 
   # Export the selection to the parent shell
@@ -44,8 +45,6 @@ prompt_select() {
     log_error "Invalid selection"
     prompt_select "$prompt" "$variable_name" "${options[@]}"
   fi
-
-  echo ""
 }
 
 # Prompt for yes/no response
@@ -71,6 +70,7 @@ prompt_yes_no() {
   # Keep asking until we get a valid response
   local answer
   while true; do
+    echo -e "${PURPLE}> ${NC}\c"
     read -r -p "$prompt" answer
 
     # Empty response means use default
