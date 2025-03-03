@@ -64,7 +64,7 @@ create_project() {
   log_step "Creating Next.js project"
 
   # Use the selected package manager flag if applicable
-  local cmd="npx create-next-app@latest $project_name --typescript --eslint --app --tailwind --no-turbopack --src-dir --import-alias '@/*' $package_manager_flag"
+  local cmd="npx create-next-app@latest . --typescript --eslint --app --tailwind --no-turbopack --src-dir --import-alias '@/*' $package_manager_flag"
 
   log_info "Running: $cmd"
   eval $cmd
@@ -73,9 +73,6 @@ create_project() {
     log_error "Failed to create Next.js project. Please check the error messages above."
     exit 1
   fi
-
-  # Navigate into the project directory
-  cd "$project_name" || exit
 
   log_success "Project created successfully in $(pwd)"
 }
