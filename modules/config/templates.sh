@@ -142,7 +142,7 @@ export default function Home() {
           <div className="text-lg text-gray-700 dark:text-gray-300 flex items-center justify-center space-x-2">
               <span>Built with ❤️ by</span>
               <a
-                  href="https://github.com/vercel/next.js/tree/canary/packages/create-next-app"
+                  href="https://github.com/Kasui92/next-starter"
                   className="text-blue-600 hover:text-blue-800 font-semibold hover:underline transition-colors"
               >
                   next-starter
