@@ -15,6 +15,6 @@ display_header() {
 
 display_header_subtitle() {
   echo -e "${CYAN}=== 🚀 Next.js Project Starter 🚀 ===${NC}"
-  echo -e "${YELLOW}Create a modern Next.js app with best practices${NC}"
+  echo -e "${YELLOW}Create a modern Next.js app with some (${BOLD}absolutely unsolicited and completely questionable${NC}${YELLOW}) opinions.${NC}"
   echo ""
 }
